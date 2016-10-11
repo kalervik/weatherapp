@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 alert alert-danger" ng-if ='validationFailed'>
+        <p> Please enter city.</p>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <h4>Forcast for the city</h4>
+        <form ng-submit ='submit()'>
+            <div class ="form-group">
+                <input type ='text' class='form-control' ng-model ='city'>
+            </div>
+            <button class="btn btn-success">Get Forecast</button>
+        </form>
+    </div>    
+</div>

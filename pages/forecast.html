@@ -1,0 +1,19 @@
+<p>
+    <a href ='#/'>Back to search</a>
+</p>
+<div class="row alert alert-warning" ng-if ='apiError' >
+    <h3> City not found please go back to check weather for different city.</h3>
+</div>
+<div class="row>" ng-if ='!apiError'>
+    <h4>Forecast for {{city}} </h4>
+    <hr />
+    Days: <a href='#/forecast/2'ng-class="{ 'bg-primary': days ==='2' }">2</a> | <a href='#/forecast/5' ng-class="{ 'bg-primary': days ==='5' }">5</a> | <a href='#/forecast/7' ng-class="{ 'bg-primary': days ==='7' }">7</a>
+    <hr />
+    <div ng-repeat ='w in weatherResult.list'>
+        <div class="row">
+            <div class ='col-md-12'>
+                <weather-report weather-day = 'w' convert-to-standard = 'convertToCelcius(dayTimeTemp)' convert-to-date ='convertToDate(dt)' date-format='MMM d, y'></weather-report>
+            </div>
+        </div>
+    </div>
+</div>
